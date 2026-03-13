@@ -20,20 +20,23 @@ public class RegistrationWithPageObjectTests extends TestBase {
         registrationPage.openPage()
 //        open("/automation-practice-form");
 //        $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
-        .setFirstName("Alex")
-        .setLastName("Egorov")
-        .setEmail("alex@egorov.com")
-        .setGender("Other")
-        .setUserNumber("9251562946");
+                .setFirstName("Alex")
+                .setLastName("Egorov")
+                .setEmail("alex@egorov.com")
+                .setGender("Other")
+                .setUserNumber("9251562946")
+                .setDateOfBirth("16", "July", "2008")
+                .checkResult("Student Name", "Alex Egorov")
+                .checkResult("Student Email", "alex@egorov.com");
 //        $("#firstName").setValue("Alex");
 //        $("#lastName").setValue("Egorov");
 //        $("#userEmail").setValue("alex@egorov.com");
 //        $("#genterWrapper").$(byText("Other")).click();
 //        $("#userNumber").setValue("9251562946");
-        $("#dateOfBirthInput").click();
-        $(".react-datepicker__month-select").selectOption("July");
-        $(".react-datepicker__year-select").selectOption("2008");
-        $(".react-datepicker__day--016:not(react-datepicker__day--outside-month)").click();
+//        $("#dateOfBirthInput").click();
+//        $(".react-datepicker__month-select").selectOption("July");
+//        $(".react-datepicker__year-select").selectOption("2008");
+//        $(".react-datepicker__day--016:not(react-datepicker__day--outside-month)").click();
         $("#subjectsInput").setValue("Math").pressEnter();
         $("#hobbiesWrapper").$(byText("Sports")).click();
         $("#uploadPicture").uploadFromClasspath("img/1.png");

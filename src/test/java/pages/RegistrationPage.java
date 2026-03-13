@@ -63,4 +63,10 @@ public class RegistrationPage {
 
         return this;
     }
+
+    public RegistrationPage checkResult(String key, String value) {
+        $(".table-responsive").$(byText(key)).parent().shouldHave(text(value));
+
+        return this;
+    }
 }
